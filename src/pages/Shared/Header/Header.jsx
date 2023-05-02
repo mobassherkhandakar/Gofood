@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Header = () => {
@@ -61,9 +61,9 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <a className="btn text-black btn-ghost normal-case text-xl">
+          <Link to="/" className="btn text-black btn-ghost normal-case text-xl">
             Auth Master
-          </a>
+          </Link>
         </div>
         <div className="navbar-end  hidden lg:flex">
           <ul className="menu menu-horizontal px-1">

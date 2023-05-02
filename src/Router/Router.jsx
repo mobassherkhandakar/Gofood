@@ -6,6 +6,7 @@ import Chef from "../pages/Home/Chef/Chef";
 import PrivateRoute from "./PrivateRoute";
 import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
+import Blog from "../pages/Blog/Blog";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,7 @@ export const router = createBrowserRouter([
         path:"/",
         element: <Home/>
       },
+      
       {
         path: "news",
         element: <PrivateRoute><Chef/></PrivateRoute>
@@ -28,6 +30,10 @@ export const router = createBrowserRouter([
       {
         path: "/registar",
         element: <Register/>
+      },
+      {
+        path: "blog",
+        element: <Blog/>
       }
     ]
   }
