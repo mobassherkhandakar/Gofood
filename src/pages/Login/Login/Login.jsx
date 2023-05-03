@@ -11,7 +11,7 @@ const Login = () => {
   const [error, setError] = useState('')
   const location = useLocation()
   const navigate = useNavigate()
-  const from = location.state?.from?.pathname || '/home'
+  const from = location.state?.from?.pathname || "/"
 
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
