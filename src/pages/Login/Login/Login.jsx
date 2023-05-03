@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import loginLogo from "../../../assets/107385-login.json";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
@@ -9,13 +9,14 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [error, setError] = useState('')
+  const location = useLocation()
+  const navigate = useNavigate()
+  const from = location.state?.from?.pathname || '/home'
 
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
 
-  const { setUser, loginUser } = useContext(AuthContext);
-  // const navigate = useNavigate();
-  // const location = useLocation();
+  const { loginUser } = useContext(AuthContext);
 
   //!handleSubmit fuction
   const handleSubmit = (e) => {
@@ -30,8 +31,8 @@ const Login = () => {
     loginUser(email, password)
     .then(rusult=> {
       const loginUser = rusult.user;
-      setUser(loginUser)
       console.log(loginUser);
+      navigate(from, { replace: true })
     })
     .catch(error=> {
       setError(error.message);

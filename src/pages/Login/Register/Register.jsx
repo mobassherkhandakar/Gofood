@@ -14,7 +14,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
 
-  const {setUser, createUser } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
   const navigate = useNavigate()
   // const navigate = useNavigate();
   // const location = useLocation();
@@ -32,7 +32,6 @@ const Register = () => {
     createUser(email, password)
     .then(rusult=> {
       const loginUser = rusult.user;
-      setUser(loginUser)
       console.log(loginUser);
       navigate('/thankyou')
       
