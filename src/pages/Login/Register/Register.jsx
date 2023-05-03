@@ -73,7 +73,7 @@ const Register = () => {
         <div className="flex items-center justify-center h-screen">
           <div className="w-full max-w-md">
             <h1 className="text-center text-3xl font-bold text-gray-800 mb-6">
-              Log in to your account
+            Registar to your account
             </h1>
             <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
               <div className="mb-4">

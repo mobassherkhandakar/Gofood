@@ -81,7 +81,13 @@ const Header = () => {
                   className="btn btn-accent btn-circle avatar"
                 >
                   <div className="w-10 rounded-full">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ4JTsw2gOIRwGUnbpZjNjizIzVl6vkBfXqxdR6e93nA&s" />
+                    <img
+                      src={
+                        user?.photoURL
+                          ? user?.photoURL
+                          : "https://ionicframework.com/docs/img/demos/avatar.svg"
+                      }
+                    />
                   </div>
                 </label>
                 <ul
@@ -89,7 +95,9 @@ const Header = () => {
                   className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-auto"
                 >
                   <li>
-                    <button onClick={singOutHandler}  className="capitalize">Logout</button>
+                    <button onClick={singOutHandler} className="capitalize">
+                      Logout
+                    </button>
                   </li>
                 </ul>
               </div>
@@ -125,7 +133,7 @@ const Header = () => {
                 to="/login"
                 className={({ isActive }) => (isActive ? "active " : "default")}
               >
-                <button  className="btn capitalize btn-primary">Login</button>
+                <button className="btn capitalize btn-primary">Login</button>
               </NavLink>
             )}
           </div>
