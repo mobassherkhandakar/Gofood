@@ -4,8 +4,13 @@ import loginLogo from "../../../assets/107385-login.json";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../../firebase/firebase.config";
 
+const auth = getAuth(app)
 const Login = () => {
+  const googleProvider = new GoogleAuthProvider()
+  const githubProvider = new GithubAuthProvider()
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [error, setError] = useState('')
@@ -16,7 +21,30 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
 
-  const { loginUser } = useContext(AuthContext);
+  const { loginUser, setUser } = useContext(AuthContext);
+
+  //!HandleGoogle function
+  const handleGoogle = () =>{
+    signInWithPopup(auth, googleProvider)
+    .then(rusult =>{
+      const user = rusult.user;
+      setUser(user)
+    })
+    .catch(error=>{
+      setError(error.message)
+    })
+  }
+  const handleGitHub = () =>{
+    signInWithPopup(auth, githubProvider)
+    .then(rusult =>{
+      const user = rusult.user;
+      setUser(user)
+    })
+    .catch(error=>{
+      setError(error.message)
+    })
+  }
+
 
   //!handleSubmit fuction
   const handleSubmit = (e) => {
@@ -132,11 +160,11 @@ console.log(email, password);
               <span className="text-gray-600 font-medium">Or sign in with</span>
             </div>
             <div className="flex justify-center">
-              <button className="bg-red-600 flex items-center hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline mr-4">
+              <button onClick={handleGoogle} className="bg-red-600 flex items-center hover:bg-red-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline mr-4">
                 <FaGoogle className="mr-2" />
                 Google
               </button>
-              <button className="bg-gray-800 flex items-center hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">
+              <button onClick={handleGitHub} className="bg-gray-800 flex items-center hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">
                 <FaGithub className="mr-2" />
                 GitHub
               </button>
