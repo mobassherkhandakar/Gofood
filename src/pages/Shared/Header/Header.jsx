@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, singOutHandler } = useContext(AuthContext);
   return (
     <div className="bg-base-100 shadow-md">
       <div className="navbar bg-base-100 my-container">
@@ -75,7 +75,7 @@ const Header = () => {
             </li>
 
             {user ? (
-              <div className="ps-2">
+              <div className="ps-2  dropdown dropdown-bottom">
                 <label
                   tabIndex={0}
                   className="btn btn-accent btn-circle avatar"
@@ -84,6 +84,14 @@ const Header = () => {
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ4JTsw2gOIRwGUnbpZjNjizIzVl6vkBfXqxdR6e93nA&s" />
                   </div>
                 </label>
+                <ul
+                  tabIndex={0}
+                  className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-auto"
+                >
+                  <li>
+                    <button onClick={singOutHandler}  className="capitalize">Logout</button>
+                  </li>
+                </ul>
               </div>
             ) : (
               <li>
@@ -117,7 +125,7 @@ const Header = () => {
                 to="/login"
                 className={({ isActive }) => (isActive ? "active " : "default")}
               >
-                <button className="btn capitalize btn-primary">Login</button>
+                <button  className="btn capitalize btn-primary">Login</button>
               </NavLink>
             )}
           </div>

@@ -4,6 +4,7 @@ import {
   getAuth,
   onAuthStateChanged,
   signInWithEmailAndPassword,
+  signOut,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
@@ -26,6 +27,13 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
+
+  //! Logout user 
+  const singOutHandler = () => {
+    signOut(auth)
+    .then(ruselt=> console.log(ruselt))
+    .catch(error=> console.log(error))
+  }
   //!Oubserver
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
@@ -44,6 +52,7 @@ const AuthProvider = ({ children }) => {
     setUser,
     loginUser,
     loading,
+    singOutHandler
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
