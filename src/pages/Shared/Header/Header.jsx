@@ -49,16 +49,6 @@ const Header = () => {
                   Blog
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/registar"
-                  className={({ isActive }) =>
-                    isActive ? "active" : "default"
-                  }
-                >
-                  Registar
-                </NavLink>
-              </li>
             </ul>
           </div>
           <Link to="/" className="btn text-black btn-ghost normal-case text-xl">
@@ -83,22 +73,17 @@ const Header = () => {
                 Blog
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/registar"
-                className={({ isActive }) => (isActive ? "active" : "default")}
-              >
-                Registar
-              </NavLink>
-            </li>
 
             {user ? (
-              <div className="ps-2"> 
-                <label tabIndex={0} className="btn btn-accent btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ4JTsw2gOIRwGUnbpZjNjizIzVl6vkBfXqxdR6e93nA&s" />
-                </div>
-              </label>
+              <div className="ps-2">
+                <label
+                  tabIndex={0}
+                  className="btn btn-accent btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ4JTsw2gOIRwGUnbpZjNjizIzVl6vkBfXqxdR6e93nA&s" />
+                  </div>
+                </label>
               </div>
             ) : (
               <li>
