@@ -8,6 +8,7 @@ import Login from "../pages/Login/Login/Login";
 import Register from "../pages/Login/Register/Register";
 import Blog from "../pages/Blog/Blog";
 import ThankYou from "../pages/ThankYou/ThankYou";
+import ChafeDeteils from "../pages/ChafeDeteils/ChafeDeteils";
 
 export const router = createBrowserRouter([
   {
@@ -21,8 +22,8 @@ export const router = createBrowserRouter([
       },
       
       {
-        path: "news",
-        element: <PrivateRoute><Chef/></PrivateRoute>
+        path: "chafe/:id",
+        element: <PrivateRoute><ChafeDeteils/></PrivateRoute>
       },
       {
         path: "login",

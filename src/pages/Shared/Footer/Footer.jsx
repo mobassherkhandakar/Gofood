@@ -67,7 +67,7 @@ const Footer = () => {
         </div>
         <div className="lg:mt-14">
           <p className="text-sm text-gray-100">
-            © Copyright 2023 Lorem Inc. All rights reserved.
+            © Copyright 2023 GoFood Inc. All rights reserved.
           </p>
         </div>
         <div className="w-full md:w-1/3 mt-7 lg:w-1/4">
