@@ -42,7 +42,7 @@ const Header = () => {
               </li>
               <li>
                 <NavLink
-                  to="/login"
+                  to="/blog"
                   className={({ isActive }) =>
                     isActive ? "active" : "default"
                   }
