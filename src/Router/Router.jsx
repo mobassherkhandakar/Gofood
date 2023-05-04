@@ -13,35 +13,42 @@ import ChafeDeteils from "../pages/ChafeDeteils/ChafeDeteils";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main/>,
-    errorElement: <ErrorPage/>,
+    element: <Main />,
+    errorElement: <ErrorPage />,
     children: [
       {
-        path:"/",
-        element: <Home/>
+        path: "/",
+        element: <Home />,
       },
-      
+
       {
         path: "chafe/:id",
-        element: <PrivateRoute><ChafeDeteils/></PrivateRoute>
+        element: (
+          <PrivateRoute>
+            <ChafeDeteils />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(
+            `https://chef-recipe-hunter-server-side-mobassherkhandakar.vercel.app/chafe/${params.id}`
+          ),
       },
       {
         path: "login",
-        element: <Login/>
+        element: <Login />,
       },
       {
         path: "/registar",
-        element: <Register/>
+        element: <Register />,
       },
       {
         path: "/thankyou",
-        element:<ThankYou/>
+        element: <ThankYou />,
       },
       {
         path: "blog",
-        element: <Blog/>
-      }
-    ]
-  }
-])
-
+        element: <Blog />,
+      },
+    ],
+  },
+]);

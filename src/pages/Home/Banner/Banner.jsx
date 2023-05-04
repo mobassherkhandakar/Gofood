@@ -25,7 +25,7 @@ const Banner = () => {
             <h1 className="text-2xl w-full lg:leading-tight sm:text-4xl lg:text-6xl lg:max-w-3xl title-text">
               Box Office News!
             </h1>
-            <p className="py-6 text-white">
+            <p className="py-6 text-base text-white md:text-lg">
               We believe that food is not just about sustenance, but also about
               enjoyment and bringing people together. That's why we're
               passionate about creating recipes that are not only delicious, but
