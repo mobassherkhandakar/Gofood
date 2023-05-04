@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import logo from "../../../../public/Gofood-logo.png"
 
 const Header = () => {
   const { user, singOutHandler } = useContext(AuthContext);
@@ -51,8 +52,8 @@ const Header = () => {
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn text-black btn-ghost normal-case text-xl">
-            Auth Master
+          <Link to="/" className="bg-white">
+            <img className="w-32 bg-white" src={logo} alt="" />
           </Link>
         </div>
         <div className="navbar-end  hidden lg:flex">
@@ -81,7 +82,7 @@ const Header = () => {
                   className="btn btn-accent btn-circle avatar"
                 >
                   <div className="w-10 rounded-full">
-                    <img
+                    <img title={user?.displayName && user?.displayName}
                       src={
                         user?.photoURL
                           ? user?.photoURL
