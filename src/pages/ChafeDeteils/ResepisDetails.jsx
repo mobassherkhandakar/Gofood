@@ -10,7 +10,7 @@ const ResepisDetails = ({ recipe }) => {
     toast.success('Favarite button added')
     setfavarite(true)
   }
-  console.log(favarite);
+  // console.log(favarite);
   return (
     <div className="mx-auto mb-5">
       <div className="card w-96 bg-base-100 shadow-xl">

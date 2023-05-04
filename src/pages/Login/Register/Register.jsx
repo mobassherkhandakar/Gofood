@@ -4,7 +4,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import {  updateProfile } from "firebase/auth";
-import app from "../../../firebase/firebase.config";
 
 const Register = () => {
   const [password, setPassword] = useState("");

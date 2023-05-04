@@ -5,7 +5,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ChafCard = ({ chafe }) => {
   const {chef_name,chef_picture,num_of_recipes,likes,years_of_experience,id} = chafe;
-  console.log(chafe);
+  // console.log(chafe);
   // console.log(chef_picture);
   return (
     <div className="mx-auto">

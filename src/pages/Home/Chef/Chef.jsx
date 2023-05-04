@@ -21,7 +21,7 @@ const Chef = () => {
     };
     loadPopularData();
   }, []);
-  console.log(chafe);
+  // console.log(chafe);
   if(load){
     return <Spinner/>
   }
