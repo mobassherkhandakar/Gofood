@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from "react";
 import ChafCard from "../ChafCard/ChafCard";
+import Spinner from "../../../components/Spinner";
+
 
 const Chef = () => {
+  const [load,setLoad] = useState(true)
   const [chafe, setChafe] = useState([]);
   useEffect(() => {
-    fetch(
-      "https://chef-recipe-hunter-server-side-mobassherkhandakar.vercel.app/chafe"
-    )
-      .then((res) => res.json())
-      .then((data) => setChafe(data))
-      .catch((error) => console.log(error));
+    const loadPopularData = async () => {
+      try {
+        const json =
+          "https://chef-recipe-hunter-server-side-mobassherkhandakar.vercel.app/chafe";
+        const res = await fetch(json);
+        const data = await res.json();
+        setChafe(data);
+        setLoad(false)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    loadPopularData();
   }, []);
   console.log(chafe);
+  if(load){
+    return <Spinner/>
+  }
   return (
     <div className="my-container">
       <h1 className="text-center font-bold text-4xl my-6">Our Chafe</h1>
