@@ -15,7 +15,7 @@ const ChafeDeteils = () => {
 
   return (
     <div>
-      <div className="hero mt-14 bg-base-200">
+      <div className="hero mx-auto mt-14 bg-base-200">
         <div className=" grid grid-cols-1 md:grid-cols-2 gap-10 sm:grid-cols-2 justify-around">
           <div>
             <img
@@ -41,7 +41,7 @@ const ChafeDeteils = () => {
           </div>
         </div>
       </div>
-      <div className="my-14 my-container grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3">
+      <div className="my-14 my-container grid grid-cols-1 md:grid-cols-2   lg:grid-cols-3">
         {recipes.map(rs=> <ResepisDetails recipe={rs} key={rs.id}/>)}
       </div>
     </div>

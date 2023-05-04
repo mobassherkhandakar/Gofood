@@ -5,7 +5,7 @@ const ResepisDetails = ({ recipe }) => {
   // console.log(recipe);
   const { image, recipe_name, rating, ingredients, cooking_method } = recipe;
   return (
-    <div>
+    <div className="mx-auto mb-5">
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img className="w-screen h-96" src={image} alt="Shoes" />
