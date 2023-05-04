@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
 
 const ChafCard = ({ chafe }) => {
   const {chef_name,chef_picture,num_of_recipes,likes,years_of_experience,id} = chafe;
@@ -9,9 +11,11 @@ const ChafCard = ({ chafe }) => {
     <div className="mx-auto">
       <div className="card card-compact w-96 bg-base-100 shadow-xl">
         <figure>
-          <img className="w-screen h-96"
+        <LazyLoadImage
             src={chef_picture}
-            alt="Chafe"
+            effect="blur"
+            className="w-screen h-96 rounded-md"
+            alt="Image Alt"
           />
         </figure>
         <div className="card-body">
