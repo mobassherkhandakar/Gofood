@@ -147,14 +147,7 @@ console.log(email, password);
                   Log In
                 </button>
                 
-                <div>
-                  <a
-                    href="#"
-                    className="text-blue-500 hover:text-blue-700 text-sm font-semibold"
-                  >
-                    Forgot Password?
-                  </a>
-                </div>
+                
               </div>
               {error && <span className="error">{error}</span>}
             </form>

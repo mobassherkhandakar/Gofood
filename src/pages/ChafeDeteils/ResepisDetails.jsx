@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const ResepisDetails = ({ recipe }) => {
   // console.log(recipe);
   const { image, recipe_name, rating, ingredients, cooking_method } = recipe;
+  const [favarite,setfavarite] = useState(false)
+  const btnHandler = () =>{
+    toast.success('Favarite button added')
+    setfavarite(true)
+  }
+  console.log(favarite);
   return (
     <div className="mx-auto mb-5">
       <div className="card w-96 bg-base-100 shadow-xl">
@@ -29,7 +36,7 @@ const ResepisDetails = ({ recipe }) => {
             ))}
           </p>
           <div className="card-actions justify-start">
-            <button className="my-btn flex items-center gap-2">
+            <button disabled={favarite} onClick={btnHandler} className="my-btn btn flex items-center gap-2">
               Favourite <FaHeart />
             </button>
           </div>

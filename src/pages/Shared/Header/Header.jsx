@@ -82,13 +82,13 @@ const Header = () => {
                   className="btn btn-accent btn-circle avatar"
                 >
                   <div className="w-10 rounded-full">
-                    <img title={user?.displayName && user?.displayName}
+                    
+                    {user ? <img title={user?.displayName} src={user?.photoURL } /> : "login"}
+                    {/* <img title={user?.displayName && user?.displayName}
                       src={
-                        user?.photoURL
-                          ? user?.photoURL
-                          : "https://ionicframework.com/docs/img/demos/avatar.svg"
+                        user?.photoURL ? user?.photoURL : "https://ionicframework.com/docs/img/demos/avatar.svg"
                       }
-                    />
+                    /> */}
                   </div>
                 </label>
                 <ul
