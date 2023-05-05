@@ -6,7 +6,7 @@ import Contact from '../../../components/contact';
 import { useTitle } from '../../../hooks/useTitle';
 
 const Home = () => {
-  useTitle('Title')
+  useTitle('Home')
   return (
     <div>
       <Banner/>
