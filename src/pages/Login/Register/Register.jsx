@@ -4,8 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { Player } from "@lottiefiles/react-lottie-player";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import {  updateProfile } from "firebase/auth";
+import { useTitle } from "../../../hooks/useTitle";
 
 const Register = () => {
+  useTitle('Register')
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [error, setError] = useState("");

@@ -1,8 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import eating from "../../../assets/117100-couple-datingcandle-light-dinner.json";
 import { Player } from "@lottiefiles/react-lottie-player";
+import Spinner from "../../../components/Spinner";
 
 const Banner = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+  if (loading) {
+    return <Spinner />;
+  }
+
   return (
     <>
       <div

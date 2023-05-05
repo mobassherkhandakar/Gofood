@@ -2,8 +2,20 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import logo from "../../../../public/Gofood-logo.png"
+import { useState } from "react";
+import { useEffect } from "react";
+import Spinner from "../../../components/Spinner";
 
 const Header = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+  if (loading) {
+    return <Spinner />;
+  }
   const { user, singOutHandler } = useContext(AuthContext);
   return (
     <div className="bg-base-100 shadow-md">

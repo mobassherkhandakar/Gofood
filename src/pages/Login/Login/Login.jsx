@@ -6,9 +6,11 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 import { GithubAuthProvider, GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../../../firebase/firebase.config";
+import { useTitle } from "../../../hooks/useTitle";
 
 const auth = getAuth(app)
 const Login = () => {
+  useTitle('Login')
   const googleProvider = new GoogleAuthProvider()
   const githubProvider = new GithubAuthProvider()
   const [password, setPassword] = useState("");

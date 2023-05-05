@@ -1,8 +1,10 @@
 import React from "react";
 import { useLoaderData } from "react-router-dom";
 import ResepisDetails from "./ResepisDetails";
+import { useTitle } from "../../hooks/useTitle";
 
 const ChafeDeteils = () => {
+  useTitle('ChafeDeteils')
   const {
     chef_name,
     chef_picture,

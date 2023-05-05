@@ -1,8 +1,10 @@
 import { Player } from '@lottiefiles/react-lottie-player';
 import React from 'react';
 import thankyou from "../../assets/104368-thank-you.json"
+import { useTitle } from '../../hooks/useTitle';
 
 const ThankYou = () => {
+  useTitle('ThankYou')
   return (
     <div className='flex justify-center items-center'>
       <Player
